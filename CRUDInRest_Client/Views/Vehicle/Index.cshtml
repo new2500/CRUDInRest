@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <a href="@Url.Action("Create","Vehicle")">Add new vehicle</a>
+    <br /> <br />
+    <table cellpadding="2" cellspacing="2" border="1">
+        <tr>
+            <th>Id</th>
+            <th>Year</th>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Option</th>
+        </tr>
+        @foreach(var  vehicle in ViewBag.listVehicles)
+        {
+            <tr>
+                <td>@vehicle.ID</td>
+                <td>@vehicle.Year</td>
+                <td>@vehicle.Make</td>
+                <td>@vehicle.Model</td>
+                <td>
+                    <a href="@Url.Action("Deltele","Vehicle", new {
+                            id = vehicle.ID})">Delete</a>
+                </td>
+            </tr>
+        }
+    </table>
+</body>
+</html>

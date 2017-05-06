@@ -1,0 +1,36 @@
+﻿
+@{
+    Layout = null;
+}
+@model CRUDInRest_Client.ViewModels.VehicleViewModel
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+    @using (Html.BeginForm("Create", "Vehicle"))
+    {
+        <table cellpadding="2" cellspacing="2"><
+             <tr>
+                 <td>@Html.LabelFor(model => model.Vehicle.Make)</td>
+                 <td>@Html.TextBoxFor(model => model.Vehicle.Make)</td>
+             </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.Vehicle.Year)</td>
+                <td>@Html.TextBoxFor(model => model.Vehicle.Year)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.Vehicle.Model)</td>
+                <td>@Html.TextBoxFor(model => model.Vehicle.Model)</td>
+            </tr>
+        <tr>
+        <td>&nbsp;</td>
+        <td><input type="submit" value="Save" /></td>
+    </tr>
+    </table>
+    }
+</body>
+</html>
